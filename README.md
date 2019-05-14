@@ -1,6 +1,6 @@
-# ood_apps
+# ood-apps
 
-ood_apps provides additional function to the Web GUI based Open OnDemand platform for clusters (https://github.com/OSC/Open-OnDemand)
+ood-apps provides additional function to the Web GUI based Open OnDemand platform for clusters (https://github.com/OSC/Open-OnDemand)
 
 This project contains:
 
