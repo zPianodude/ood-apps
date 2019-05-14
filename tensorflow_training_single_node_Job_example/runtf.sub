@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH -p batch		# partition
+#SBATCH -N 1       		# number of nodes
+#SBATCH -t 00:30:00		# wall time
+#SBATCH -J tf	  		# job name
+#SBATCH --exclusive   		# exclusive node access
+#SBATCH --mem=0   		# all mem avail
+#SBATCH --mail-type=FAIL        # only send email on failure
+#SBATCH --ntasks-per-node=8	# n tasks per machine (one task per gpu)
+#SBATCH --threads-per-core=2	# HT is on
+#SBATCH --cores-per-socket=20	# 20 cores on each socket 
+#SBATCH --overcommit
+
+set +x
+
+DATA="/raid/datasets/train-val-tfrecord-480"
+TF_CONT="docker pull nvcr.io/nvidia/tensorflow:19.04-py3"
+
+nvidia-docker run --rm -v $(pwd):/work -w /work -v $DATA:/data \
+   --uts=host --ipc=host --net=host --ulimit stack=67108864 --ulimit memlock=-1 --security-opt seccomp=unconfined \
+   -u $(id -u):$(id -g) \
+   ${TF_CONT} ./tfcmd.sh
+

@@ -1,0 +1,5 @@
+---
+name: Tensorflow training single
+host: prmcluster
+notes: Change these notes by editing the manifest.yml in this template's directory
+script: runtf.sub
