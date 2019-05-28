@@ -13,50 +13,24 @@ OnDemand node):
 
 ## Install
 
-These are command line only installation directions.
+You can install to your home directory and run as a personal template or install in your site main OOD directory
 
-We start by downloading a zipped package of this code. This allows us to start
-with a fresh directory that has no git history as we will be building off of
-this.
-
+# Home directory install
 ```sh
 # Download the zip from the GitHub page
-wget https://gitlab-master.nvidia.com/lcapps/cluw/-/archive/master/cluw-master.tar.gz
+git clone https://github.com/zPianodude/ood-apps.git
+cd ood-apps
 
-# Create a catchy directory
-mkdir my_tensorboard_app
-
-# Unzip the downloaded file into this directory
-tar xzvf cluw-master.tar.gz -C my_tensorboard_app --strip-components=1
-
-# Change the working directory to this new directory
-cd my_tensorboard_app
+# Copy the example to your ondemand home directory
+cp -R bc_example_tensorboard ~/ondemand/dev/bc_example_tensorboard
+(~/demand may be different for your site)
 ```
+# Site shared install
+<tbd>
 
-From here you will make any modifications to the code that you would like and
-version your changes in your own repository:
+# Update files for your site if needed
+submit.yml.erb - may need to update the queue and account names
+templates/script.sh.erb - may need to update the docker run command for your site
 
-```sh
-# Version our app by making a new Git repository
-git init
-
-#
-# Make all your code changes while testing them in the OnDemand Dashboard
-#
-# ...
-#
-
-# Add the files to the Git repository
-git add --all
-
-# Commit the staged files to the Git repository
-git commit -m "my first commit"
-```
-
-## Contributing
-
-1. Fork it ( https://gitxxx/lcapps/cluw/bc_example_tensorboard/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+## Using
+For the home diretory install, once the app is placed in your ondemand dir, it should show up in your OOD web page under the develop pulldown in the my sandbox apps
