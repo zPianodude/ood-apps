@@ -27,12 +27,11 @@ cp -R bc_example_tensorboard ~/ondemand/dev/bc_example_tensorboard
 ```
 ### Site shared install
 Copy to the site shared OOD directory:
-sudo cp -R bc_example_tensorboard /var/www/ood/apps/sys/.
+- sudo cp -R bc_example_tensorboard /var/www/ood/apps/sys/.
 
 ### Update files for your site if needed
-submit.yml.erb - may need to update the queue and account names
-
-templates/script.sh.erb - may need to update the docker run command for your site
+- submit.yml.erb - may need to update the queue and account names
+- templates/script.sh.erb - may need to update the docker run command for your site
 
 ### Enable developer mode in your site OOD install
 Instructions to enable developer mode are here:
@@ -42,4 +41,4 @@ https://osc.github.io/ood-documentation/master/app-development/enabling-developm
 ## Using Tensorboard plugin
 For the home directory sandbox install, once the app is placed in your ondemand dir, it should show up in your OOD web page under the develop pulldown in the my sandbox apps
 
-Select Tensorboard app, enter the path that has your TensorFlow log and start.  After a node is allocated, use the 
+Select Tensorboard app, enter the path that has your TensorFlow log and start.  After a node is allocated open a new browser tab and use the host and port displayed to browse to Tensorboard.
