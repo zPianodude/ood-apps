@@ -15,7 +15,7 @@ OnDemand node):
 
 You can install to your home directory and run as a personal template or install in your site main OOD directory
 
-# Home directory install
+### Home directory install
 ```sh
 # Download the zip from the GitHub page
 git clone https://github.com/zPianodude/ood-apps.git
@@ -23,12 +23,12 @@ cd ood-apps
 
 # Copy the example to your ondemand home directory
 cp -R bc_example_tensorboard ~/ondemand/dev/bc_example_tensorboard
-(~/demand may be different for your site)
+(~/demand may be different directory name for your site)
 ```
-# Site shared install
-<tbd>
+### Site shared install
+ to be completed
 
-# Update files for your site if needed
+### Update files for your site if needed
 submit.yml.erb - may need to update the queue and account names
 templates/script.sh.erb - may need to update the docker run command for your site
 
